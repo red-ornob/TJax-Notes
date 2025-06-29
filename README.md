@@ -1,5 +1,5 @@
 # MarkX
-This is a notetaking app integrating Markdown and MathJax written in TypeScript using NW.js
+This is a note-taking app integrating Markdown and MathJax written in TypeScript using NW.js
 
 HEAVILY WIP right now.
 

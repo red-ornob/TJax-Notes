@@ -1,7 +1,7 @@
 {
   "name": "markx",
   "version": "0.0.0",
-  "description": "A Notetaking app written in typescript and using NW.js",
+  "description": "A note-taking app written in typescript and using NW.js",
   "keywords": [
     "notetaking-app",
     "typescript",
