@@ -1,4 +1,8 @@
 {
 	"name": "markx",
-	"main": "index.js"
+	"main": "index.js",
+	"window": {
+		"title": "MarkX",
+		"fullscreen": true
+	}
 }
