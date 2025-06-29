@@ -20,9 +20,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nw src/",
-    "build": "nwbuild --mode=build --glob=false --cacheDir=./node_modules/nw src/"
+    "start": "nw src/"
   },
   "dependencies": {
     "@types/node": "^24.0.7",
