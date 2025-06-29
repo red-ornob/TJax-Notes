@@ -1,0 +1,34 @@
+{
+  "name": "markx",
+  "version": "0.0.0",
+  "description": "A Notetaking app written in typescript and using NW.js",
+  "keywords": [
+    "notetaking-app",
+    "typescript",
+    "nw.js"
+  ],
+  "homepage": "https://github.com/red-ornob/MarkX#readme",
+  "bugs": {
+    "url": "https://github.com/red-ornob/MarkX/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/red-ornob/MarkX.git"
+  },
+  "license": "AGPL-3.0-or-later",
+  "author": "red-ornob <red.ornob.dev@gmail.com>",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nw src/",
+    "build": "nwbuild --mode=build --glob=false --cacheDir=./node_modules/nw src/"
+  },
+  "dependencies": {
+    "@types/node": "^24.0.7",
+    "@types/nw.js": "^0.92.0",
+    "nw": "^0.101.0-sdk",
+    "nw-builder": "^4.13.14",
+    "typescript": "^5.8.3"
+  }
+}
