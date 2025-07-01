@@ -7,5 +7,12 @@
 <html lang="en">
 <head>
     <title>MarkX</title>
+    <script type="module">
+      import ZeroMd from './scripts/zero-md.js';
+      customElements.define('zero-md', ZeroMd);
+    </script>
 </head>
+<body>
+  <zero-md src="test.md"></zero-md>
+</body>
 </html>
