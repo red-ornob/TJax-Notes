@@ -1,10 +1,10 @@
 {
   "name": "markx",
   "version": "0.0.0",
-  "description": "A note-taking app integrating Markdown and MathJax together, written in TypeScript and using NW.js",
+  "description": "A note-taking app integrating Markdown and MathJax together, written in JavaScript and using NW.js",
   "keywords": [
     "note-taking",
-    "typescript",
+    "javascript",
     "nw.js"
   ],
   "homepage": "https://github.com/red-ornob/MarkX#readme",
@@ -17,17 +17,14 @@
   },
   "license": "AGPL-3.0-or-later",
   "author": "red-ornob <red.ornob.dev@gmail.com>",
-  "type": "module",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "start": "nw src/"
   },
   "dependencies": {
-    "@types/node": "^24.0.7",
-    "@types/nw.js": "^0.92.0",
     "nw": "^0.101.0-sdk",
-    "nw-builder": "^4.13.14",
-    "typescript": "^5.8.3"
+    "nw-builder": "^4.13.14"
   },
   "private": true
 }

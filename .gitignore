@@ -3,10 +3,6 @@ node_modules/
 package-lock.json
 yarn.lock
 
-# ---> TypeScript Compiler Output
-dist/
-*.tsbuildinfo
-
 # ---> IDE - Visual Studio Code
 .vscode/
 *.code-workspace
@@ -46,7 +42,3 @@ EOL
 
 # ---> Distribution
 out/
-
-# ---> JavaScript compiled from Typescript
-*.js
-*.js.map
