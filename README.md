@@ -5,6 +5,7 @@ HEAVILY WIP right now.
 
 ### __To-Do:__
 - set up marked and mathjax-node
+- also highlight.js and mermaid.
 - potentially go back to using TS if possible
 - create a simple renderer and then editor
 - beautify it with css
@@ -13,6 +14,7 @@ HEAVILY WIP right now.
 - make a way to save and embed svg files
 - add tracking for the svg files
 - add a tagging and lookup system
+- internal and inter-note link
 - sync with git and custom syncing
 
 Copyright (C) 2025 [red.ornob](https://github.com/red-ornob) [<red.ornob.dev@gmail.com>](mailto:red.ornob.dev@gmail.com)\
