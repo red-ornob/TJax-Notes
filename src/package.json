@@ -1,8 +1,8 @@
 {
-	"name": "markx",
-	"main": "index.js",
-	"window": {
-		"title": "MarkX",
-		"fullscreen": true
-	}
+  "name": "markx",
+  "main": "index.js",
+  "window": {
+    "title": "MarkX",
+    "fullscreen": true
+  }
 }
