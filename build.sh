@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-#tsc
-
 npx nwbuild --mode=build --glob=false --cacheDir=./node_modules/nw --platform=linux --arch=x64 --outDir=out/linux-x64/ src/
 tar -czf out/linux-x64.tgz -C out/ linux-x64/
 rm -rf out/linux-x64/
