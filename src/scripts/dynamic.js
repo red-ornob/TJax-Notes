@@ -12,6 +12,9 @@
 //   return MathJax.startup.promise;
 // }
 
+const sanitizeHtml = require('sanitize-html');
+import { marked } from "../libs/marked.esm.js"
+
 document.addEventListener("DOMContentLoaded", function () {
   
   const editor = document.querySelector('#editor');
@@ -21,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // let isRendering = false;
 
   editor.addEventListener('input', function () {
-    viewer.innerHTML = editor.value;
+    viewer.innerHTML = sanitizeHtml(editor.value);
     toRender = true;
   });
 
@@ -29,7 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (toRender) { // to only call when there is a change
       // not needed? does setInterval not call a running function?
       // isRendering = true;
-      MathJax.typeset([viewer])
+      MathJax.typeset([viewer]);
+      viewer.innerHTML = marked.parse(viewer.innerHTML);
       // isRendering = false;
       toRender = false;
     }

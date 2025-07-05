@@ -7,12 +7,12 @@
 window.MathJax = {
     tex: {
         inlineMath: [
-            ["\\(", "\\("],
+            ["\\(", "\\)"],
             ["$`", "`$"]
         ],
         displayMath: [
             ["\\[", "\\]"],
-            ["```math", "```"]
+            ["```math\n", "\n```"]
         ]
     },
     options: {
