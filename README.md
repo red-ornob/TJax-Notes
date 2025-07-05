@@ -4,18 +4,23 @@ This is a note-taking app integrating Markdown and MathJax together, written in 
 HEAVILY WIP right now.
 
 ### __To-Do:__
-- ~~set up marked and mathjax-node~~
-- also highlight.js and mermaid.
-- potentially go back to using TS if possible
-- create a simple renderer and then editor
-- beautify it with css
-- create a save and open system
-- add hotkeys and settings
-- make a way to save and embed svg files
-- add tracking for the svg files
-- add a tagging and lookup system
-- internal and inter-note link
-- sync with git and custom syncing
+- [] set up
+  - [x] marked 
+  - [x] mathjax
+  - [x] highlight.js
+  - [] mermaid.
+- [] ~~potentially go back to using TS if possible~~
+- [x] create a simple renderer and then editor
+- [] make pages for home, view mode and edit mode
+- [] add a split view and a toggle view for preview
+- [] beautify it with css
+- [] create a save and open system
+- [] add hotkeys and settings
+- [] make a way to save and embed svg files
+- [] add tracking for the svg files
+- [] add a tagging and lookup system
+- [] internal and inter-note link
+- [] sync with git and custom syncing
 
 ### License
 Copyright (C) 2025 [red.ornob](https://github.com/red-ornob) [<red.ornob.dev@gmail.com>](mailto:red.ornob.dev@gmail.com)\

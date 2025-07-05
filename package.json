@@ -27,6 +27,7 @@
     "@types/node": "^24.0.10",
     "@types/nw.js": "^0.92.0",
     "@types/sanitize-html": "^2.16.0",
+    "highlight.js": "^11.11.1",
     "marked": "^16.0.0",
     "mathjax": "^3.2.2",
     "nw": "^0.101.0-sdk",

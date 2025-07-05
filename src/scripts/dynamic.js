@@ -4,38 +4,32 @@
  * Check NOTICE.md at the project root for the full notice.
  */
 
-// async function not needed probably
-// function typeset(code, isRendering) {
-//   MathJax.startup.promise = MathJax.startup.promise
-//     .then(() => MathJax.typesetPromise(code()))
-//     .catch((err) => console.log('Typeset failed: ' + err.message));
-//   return MathJax.startup.promise;
-// }
+'use strict';
 
-const sanitizeHtml = require('sanitize-html');
-import { marked } from "../libs/marked.esm.js"
+const sanitizeHtml = require("./lib/sanitize-html.js");
+import { marked } from "./markdown.js"
 
 document.addEventListener("DOMContentLoaded", function () {
-  
-  const editor = document.querySelector('#editor');
-  const viewer = document.querySelector('#viewer');
 
-  let toRender = false;
-  // let isRendering = false;
+    const editor = document.querySelector('#editor');
+    const viewer = document.querySelector('#viewer');
+    // buffer used to remove flickering caused by unrendered markdown and mathjax
+    const buffer = document.querySelector('#buffer');
 
-  editor.addEventListener('input', function () {
-    viewer.innerHTML = sanitizeHtml(editor.value);
-    toRender = true;
-  });
+    let toRender = false;
 
-  setInterval(function checkToRender() { // to limit the number of calls
-    if (toRender) { // to only call when there is a change
-      // not needed? does setInterval not call a running function?
-      // isRendering = true;
-      MathJax.typeset([viewer]);
-      viewer.innerHTML = marked.parse(viewer.innerHTML);
-      // isRendering = false;
-      toRender = false;
-    }
-  }, 1);
+    editor.addEventListener('input', function () {
+        buffer.innerHTML = sanitizeHtml(editor.value);
+        toRender = true;
+    });
+
+    setInterval(function checkToRender() { // to limit the number of calls
+        if (toRender) { // to only call when there is a change
+            // noinspection JSUnresolvedReference
+            MathJax.typeset([buffer]); // typeset is not detected as a function
+            buffer.innerHTML = marked.parse(buffer.innerHTML);
+            viewer.innerHTML = buffer.innerHTML;
+            toRender = false;
+        }
+    }, 1);
 });

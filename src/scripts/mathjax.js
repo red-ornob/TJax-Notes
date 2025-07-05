@@ -4,6 +4,8 @@
  * Check NOTICE.md at the project root for the full notice.
  */
 
+'use strict';
+
 window.MathJax = {
     tex: {
         inlineMath: [
@@ -22,7 +24,7 @@ window.MathJax = {
 
 (function () {
     let script = document.createElement("script");
-    script.src = "libs/tex-svg-full.js";
+    script.src = "lib/mathjax.js";
     script.async = true;
     document.head.appendChild(script);
 })();

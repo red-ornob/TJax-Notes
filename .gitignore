@@ -42,4 +42,4 @@ EOL
 
 # ---> Distribution
 out/
-**/libs/
+src/lib/
