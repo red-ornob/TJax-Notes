@@ -23,11 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
         toRender = true;
     });
 
-    setInterval(function checkToRender() { // to limit the number of calls
+    setInterval(function render() { // to limit the number of calls
         if (toRender) { // to only call when there is a change
             // noinspection JSUnresolvedReference
             MathJax.typeset([buffer]); // typeset is not detected as a function
+            
             buffer.innerHTML = marked.parse(buffer.innerHTML);
+            
             viewer.innerHTML = buffer.innerHTML;
             toRender = false;
         }

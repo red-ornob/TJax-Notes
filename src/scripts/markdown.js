@@ -11,8 +11,8 @@ const hljs = require("./lib/highlight/highlight.js");
 
 const renderer = {
     code({ text, lang }) {
-        const classValue = lang ? 'hljs language-' + lang : 'hljs language-plaintext';
         text = text.replace(/\n$/, '');
+        const classValue = lang ? 'hljs language-' + lang : 'hljs language-plaintext';
         return `<pre><code class="${classValue}">${text}\n</code></pre>`;
     }
 };
