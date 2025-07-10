@@ -8,11 +8,12 @@ HEAVILY WIP right now.
   - [x] marked 
   - [x] mathjax
   - [x] highlight.js
-  - ~~[ ] mermaid.~~
+  - ~~[ ] mermaid~~
 - ~~[ ] potentially go back to using TS if possible~~
-- [x] create a simple renderer and then editor
+- [x] create a simple renderer and editor
 - [ ] make pages for home, view mode and edit mode
 - [ ] add a split view and a toggle view for preview
+- [ ] add partial rendering to the editor
 - [ ] beautify it with css
 - [ ] create a save and open system
 - [ ] add hotkeys and settings
