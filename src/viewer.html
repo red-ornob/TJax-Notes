@@ -6,10 +6,14 @@
   -->
 <html lang="en">
 <head>
-    <title>MarkX</title>
+    <title>MarkX Viewer</title>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <link rel="stylesheet" href="styles/codestyles/dark.css">
+    <script src="scripts/mathjax.js" async></script>
+    <script src="scripts/viewer-render.js" type="module"></script>
 </head>
 <body>
-    <a href="./viewer.html">View</a>&nbsp;&nbsp;&nbsp;<a href="./editor.html">Edit</a><br>
+    <a href="./index.html">Home</a><span>&nbsp;&nbsp;&nbsp;</span><a href="./editor.html">Edit</a><br>
+    <div id="viewer" style="height: 95vh;"></div>
 </body>
 </html>
