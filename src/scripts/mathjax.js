@@ -15,7 +15,8 @@ window.MathJax = {
         displayMath: [
             ["\\\[", "\\\]"],
             ["\`\`\`math\n", "\n\`\`\`"]
-        ]
+        ],
+        processEscapes: false
     },
     options: {
         enableMenu: false
