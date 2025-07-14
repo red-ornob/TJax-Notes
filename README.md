@@ -1,16 +1,10 @@
 # MarkX
-This is a note-taking app integrating Markdown and MathJax together, written in JavaScript and using NW.js
+This is a note-taking app integrating Textile and MathJax together, written in JavaScript and using NW.js
 
 HEAVILY WIP right now.
 
 ### __To-Do:__
-- [x] set up
-  - [x] marked 
-  - [x] mathjax
-  - [x] highlight.js
-  - ~~[ ] mermaid~~
-- ~~[ ] potentially go back to using TS if possible~~
-- [x] create a simple renderer and editor
+- [ ] switch from markdown to textile
 - [ ] make pages for home, view mode and edit mode
 - [ ] add a split view and a toggle view for preview
 - [ ] add partial rendering to the editor
