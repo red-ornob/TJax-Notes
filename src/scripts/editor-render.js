@@ -6,8 +6,12 @@
 
 'use strict';
 
+const { mathjax } = require('mathjax/es5/node-main');
+const { TeX } = require('mathjax/es5/input/tex');
+const { SVG } = require('mathjax/es5/output/svg');
+
 const sanitizeHtml = require("./lib/sanitize-html.js");
-import { marked } from "./markdown.js"
+const textile = require("./lib/textile.js")
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -25,10 +29,16 @@ document.addEventListener("DOMContentLoaded", function () {
     
     setInterval(function render() { // to limit the number of calls
         if (toRender) {
-            // noinspection JSUnresolvedReference
-            MathJax.typeset([buffer]); // typeset is not detected as a function
+            buffer.innerHTML = textile(buffer.innerHTML);
             
-            buffer.innerHTML = marked.parse(buffer.innerHTML);
+            const math_elements = buffer.querySelectorAll("pre.math > code.math");
+
+            const tex = new TeX();
+            const svg = new SVG();
+            const doc = mathjax.document('', { InputJax: tex, OutputJax: svg });
+            math_elements.forEach(element => {
+                element.outerHTML = doc.convert(element.innerText, { display: true });
+            })
             
             viewer.innerHTML = buffer.innerHTML;
             toRender = false;
