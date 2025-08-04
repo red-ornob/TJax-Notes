@@ -43,3 +43,4 @@ EOL
 # ---> Distribution
 out/
 src/lib/
+src/styles/codestyles/
