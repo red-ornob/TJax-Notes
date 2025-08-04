@@ -14,3 +14,9 @@ mkdir src/lib/highlight
 cp node_modules/highlight.js/lib/index.js src/lib/highlight/highlight.js
 cp node_modules/highlight.js/lib/core.js src/lib/highlight/
 cp -r node_modules/highlight.js/lib/languages src/lib/highlight/
+
+mkdir -p src/styles/codestyles
+cp node_modules/highlight.js/styles/base16/classic-light.css src/styles/codestyles/
+cp node_modules/highlight.js/styles/base16/github.css src/styles/codestyles/
+cp node_modules/highlight.js/styles/base16/classic-dark.css src/styles/codestyles/
+cp node_modules/highlight.js/styles/base16/pop.css src/styles/codestyles/

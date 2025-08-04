@@ -9,42 +9,28 @@
 const fs = require('fs');
 const path = require('path');
 
-function createSymlink(target, destination) {
+async function loadTheme(themePath) {
     try {
-        const absTarget = path.resolve(target);
-        const absDestination = path.resolve(destination);
+        const response = await fetch(`./${themePath}`);
+        const css = await response.text();
         
-        // Calculate the relative path FROM the symlink location TO the target
-        const relativePath = path.relative(path.dirname(absDestination), absTarget);
+        const oldStyle = document.getElementById('codestyle');
+        if (oldStyle) document.head.removeChild(oldStyle);
         
+        const style = document.createElement('style');
+        style.id = 'codestyle';
+        style.textContent = css;
         
-        // Remove existing symlink/file/directory if it exists
-        try {
-            fs.unlinkSync(destination); // This works for symlinks and files
-        } catch (unlinkErr) {
-            if (unlinkErr.code === 'ENOENT') {
-                // Doesn't exist - that's fine
-            } else if (unlinkErr.code === 'EPERM') {
-                // Might be a directory on Windows
-                fs.rmdirSync(destination, { recursive: true });
-            } else {
-                console.error(unlinkErr);
-                return
-            }
-        }
-        
-        // Create the symlink
-        fs.symlinkSync(relativePath, destination);
-        
+        document.head.appendChild(style);
     } catch (err) {
-        console.error(err);
+        console.error('Failed to load theme:', err);
     }
 }
 
 function getFilesRelative(dir) {
     const absoluteDir = path.resolve(dir);
     const files = [];
-
+    
     function walk(currentDir) {
         const entries = fs.readdirSync(currentDir, { withFileTypes: true });
 
@@ -59,17 +45,21 @@ function getFilesRelative(dir) {
             }
         }
     }
-
+    
     walk(absoluteDir);
     return files;
 }
 
-// Example usage:
-const files = getFilesRelative('./src');
-let select = document.querySelector("select")
-files.forEach((file) => {
-    select.options.add(file);
-})
-select.addEventListener('select', (event) => {
-    console.log(event.target.value);
-})
+document.addEventListener("DOMContentLoaded", () => {
+    const files = getFilesRelative('./styles/codestyles/');
+    let select = document.querySelector("select#codestyle-select")
+    files.forEach((file) => {
+        let option = document.createElement("option");
+        option.innerText = file.split("/").pop();
+        option.value = file;
+        select.appendChild(option);
+    })
+    select.addEventListener('change', async (event) => {
+        await loadTheme(event.target.value);
+    })
+});
