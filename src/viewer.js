@@ -7,23 +7,23 @@
 'use strict';
 
 const sanitizeHtml = require("./lib/sanitize-html.js");
-import { marked } from "./markdown.js"
+const textile = require("./lib/textile.js")
+const mathjax = require("./scripts/mathjax.js");
+const highlight = require("./scripts/highlight.js");
 
 document.addEventListener("DOMContentLoaded", function () {
-
+    
     const text = "WIP: get text from whatever filesystem implementation";
     const viewer = document.querySelector('#viewer');
-    // buffer used to remove flickering caused by unrendered markdown and mathjax
-    const buffer = document.querySelector('#buffer');
     
     document.addEventListener('DOMContentLoaded', function () { // need to change the event to appropriate event
-        buffer.innerHTML = sanitizeHtml(text);
-       
-        // noinspection JSUnresolvedReference
-        MathJax.typeset([buffer]); // typeset is not detected as a function
+        viewer.innerHTML = sanitizeHtml(text);
         
-        buffer.innerHTML = marked.parse(buffer.innerHTML);
+        viewer.innerHTML = textile(viewer.innerHTML);
         
-        viewer.innerHTML = buffer.innerHTML;
+        const math_blocks = viewer.querySelectorAll("code");
+        mathjax.render_math(math_blocks);
+        const code_blocks = viewer.querySelectorAll("code");
+        highlight.format_code(code_blocks);
     });
 });

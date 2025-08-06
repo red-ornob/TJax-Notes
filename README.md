@@ -5,11 +5,11 @@ HEAVILY WIP right now.
 
 ### __To-Do:__
 #### __v.0.1.0__
-- make pages for home, view mode and edit mode
+- add hotkeys
 - add a split view and a toggle view for preview
 - beautify it with css
 - create a save and open system
-- add hotkeys and settings
+- add settings
 #### __v.0.1.x__
 - make a way to save and embed svg files
 - add tracking for the svg files

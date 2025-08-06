@@ -33,11 +33,12 @@ function getFilesRelative(dir) {
     
     function walk(currentDir) {
         const entries = fs.readdirSync(currentDir, { withFileTypes: true });
-
+        
+        const cwd = process.cwd()
         for (const entry of entries) {
             const fullPath = path.join(currentDir, entry.name);
-            const relativePath = path.relative(process.cwd(), fullPath);
-
+            const relativePath = path.relative(cwd, fullPath);
+            
             if (entry.isDirectory()) {
                 walk(fullPath);
             } else if (entry.isFile()) {
@@ -52,6 +53,11 @@ function getFilesRelative(dir) {
 
 document.addEventListener("DOMContentLoaded", () => {
     const files = getFilesRelative('./styles/codestyles/');
+    if (files.length === 0) {
+        console.log("No codestyles found.")
+        return;
+    }
+    
     let select = document.querySelector("select#codestyle-select")
     files.forEach((file) => {
         let option = document.createElement("option");
@@ -59,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         option.value = file;
         select.appendChild(option);
     })
+    
     select.addEventListener('change', async (event) => {
         await loadTheme(event.target.value);
     })
