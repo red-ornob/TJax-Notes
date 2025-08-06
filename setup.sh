@@ -2,7 +2,6 @@
 
 npm install
 
-# copies over the libraries so they can be distributed
 mkdir src/lib
 cp node_modules/textile-js/lib/textile.js src/lib/
 cp node_modules/sanitize-html/index.js src/lib/sanitize-html.js

@@ -5,8 +5,6 @@ HEAVILY WIP right now.
 
 ### __To-Do:__
 #### __v.0.1.0__
-- add hotkeys
-- add a split view and a toggle view for preview
 - beautify it with css
 - create a save and open system
 - add settings
