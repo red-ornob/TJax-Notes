@@ -6,4 +6,13 @@
 
 "use strict";
 
-nw.Window.open("index.html");
+const { init } = require('scripts/init');
+
+init()
+    .catch((err) => {
+    alert("Error while initialising\n" + err);
+})
+    .then(() => {
+    // noinspection JSUnresolvedReference
+    nw.Window.open("index.html");
+});
