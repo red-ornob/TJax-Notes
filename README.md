@@ -6,7 +6,6 @@ HEAVILY WIP right now.
 ### __To-Do:__
 #### __v.0.1.0__
 - beautify the pages with css
-- add configuration for notes folder
 - create a save and open function
 #### __v.0.1.x__
 - make a way to save and embed svg files
