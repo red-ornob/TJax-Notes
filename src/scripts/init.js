@@ -7,7 +7,6 @@
 const fs = require('fs').promises;
 const path = require('path');
 const os = require('os');
-const {isArgumentsObject} = require("node:util/types");
 
 export async function init() {
     const configPaths = {
@@ -44,35 +43,55 @@ async function createConfig(filePath, configJson) {
         prompt(`Notes Folder\nRelative from ${os.homedir()}/`) || 'Notes');
     
     try {
-        await fs.writeFile(filePath, JSON.stringify(configJson, null, 2), "utf-8");
+        await writeFile(filePath, JSON.stringify(configJson, null, 2));
     } catch (err) {
         alert("Error while creating config file\n" + err);
     }
+    
+    await ensureDirectoryExists(configJson.notesDir);
 }
 
 async function updateConfig(filePath, configJson) {
     try {
-        const oldConfigString = await fs.readFile(filePath, 'utf-8');
+        const savedConfigString = await fs.readFile(filePath, 'utf-8');
         
-        let oldConfigJson = JSON.parse(oldConfigString)
+        let savedConfigJson = JSON.parse(savedConfigString)
         
         Object.keys(configJson).forEach(newConfig => {
-            if (!oldConfigJson.hasOwnProperty(newConfig)) {
+            if (!savedConfigJson.hasOwnProperty(newConfig)) {
                 switch (newConfig) {
                     case 'notesDir':
-                        oldConfigJson[newConfig] = path.join(os.homedir(), 
+                        savedConfigJson[newConfig] = path.join(os.homedir(), 
                             prompt(`Notes Folder\nRelative from ${os.homedir()}/`) || 'Notes')
                         break;
                     default:
-                        oldConfigJson[newConfig] = configJson[newConfig];
+                        savedConfigJson[newConfig] = configJson[newConfig];
                         break;
                 }
             }
         });
         
-        await fs.writeFile(filePath, JSON.stringify(oldConfigJson, null, 2), "utf-8");
-
+        await writeFile(filePath, JSON.stringify(savedConfigJson, null, 2));
+        
+        await ensureDirectoryExists(savedConfigJson.notesDir);
+    
     } catch (err) {
         alert("Error while updating config file\n" + err);
     }
+}
+
+async function ensureDirectoryExists(dir) {
+    alert(dir)
+    try {
+        await fs.mkdir(dir, { recursive: true });
+    } catch (error) {
+        if (error.code !== 'EEXIST') { // Ignore if directory already exists
+            throw error;
+        }
+    }
+}
+
+async function writeFile(filePath, content) {
+    await ensureDirectoryExists(path.dirname(filePath));
+    await fs.writeFile(filePath, content, "utf-8");
 }
