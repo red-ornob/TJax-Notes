@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+nvm use
 npm install
 
 mkdir src/lib
