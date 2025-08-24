@@ -6,7 +6,6 @@ HEAVILY WIP right now.
 ### __To-Do:__
 #### __v.0.1.0__
 - beautify the pages with css
-- add a file tree for viewer
 #### __v.0.1.x__
 - make a way to save and embed svg files
 - add tracking for the svg files
