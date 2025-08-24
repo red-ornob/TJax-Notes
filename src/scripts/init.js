@@ -81,7 +81,6 @@ async function updateConfig(filePath, configJson) {
 }
 
 async function ensureDirectoryExists(dir) {
-    alert(dir)
     try {
         await fs.mkdir(dir, { recursive: true });
     } catch (error) {
