@@ -10,7 +10,7 @@ const fs =  require('fs').promises;
 const path = require('path');
 import config from "./userdata.js";
 
-function main() {
+export function set_keybinds() {
     const page = document.URL.split("/").pop().split(".")[0];
         
     if (page === "editor") {
@@ -91,5 +91,3 @@ function openFile() {
     
     input.click();
 }
-
-main()

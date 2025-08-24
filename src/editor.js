@@ -10,8 +10,11 @@ const sanitizeHtml = require("./lib/sanitize-html.js");
 const textile = require("./lib/textile.js")
 const mathjax = require("./scripts/mathjax.js");
 const highlight = require("./scripts/highlight.js");
+import {set_keybinds} from "./scripts/keybind.js";
 
-document.addEventListener("DOMContentLoaded", function () {
+function editor() {
+    set_keybinds()
+    
     const editor = document.querySelector('#editor');
     const viewer = document.querySelector('#viewer');
     // buffer used to remove flickering caused by unrendered markdown and mathjax
@@ -37,4 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
             toRender = false;
         }
     }, 1);
-});
+}
+
+editor();
