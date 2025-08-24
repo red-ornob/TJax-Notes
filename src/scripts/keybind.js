@@ -10,29 +10,31 @@ const fs =  require('fs').promises;
 const path = require('path');
 import config from "./userdata.js";
 
-const page = document.URL.split("/").pop().split(".")[0];
-
-if (page === "editor") {
-    bind({
-        code: "KeyV",
-        ctrl: false,
-        shift: false,
-        alt: true,
-    }, toggleViewer);
-
-    bind({
-        code: "KeyS",
-        ctrl: true,
-        shift: false,
-        alt: false,
-    }, saveFile);
-
-    bind({
-        code: "KeyO",
-        ctrl: true,
-        shift: false,
-        alt: false,
-    }, openFile);
+function main() {
+    const page = document.URL.split("/").pop().split(".")[0];
+        
+    if (page === "editor") {
+        bind({
+            code: "KeyV",
+            ctrl: false,
+            shift: false,
+            alt: true,
+        }, toggleViewer);
+        
+        bind({
+            code: "KeyS",
+            ctrl: true,
+            shift: false,
+            alt: false,
+        }, saveFile);
+        
+        bind({
+            code: "KeyO",
+            ctrl: true,
+            shift: false,
+            alt: false,
+        }, openFile);
+    }
 }
 
 function bind({code, ctrl, shift, alt}, func) {
@@ -89,3 +91,5 @@ function openFile() {
     
     input.click();
 }
+
+main()
