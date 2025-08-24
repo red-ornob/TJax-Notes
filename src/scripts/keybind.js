@@ -6,6 +6,9 @@
 
 'use strict';
 
+import config from "./userdata.js";
+console.log(config);
+
 function bind({code, ctrl, shift, alt}, func) {
     document.addEventListener('keyup',
         (e) => {
