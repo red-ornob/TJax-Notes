@@ -10,13 +10,14 @@ const sanitizeHtml = require("./lib/sanitize-html.js");
 const textile = require("./lib/textile.js")
 const mathjax = require("./scripts/mathjax.js");
 const highlight = require("./scripts/highlight.js");
-import {file_view} from "./scripts/file-tree.js"
+import {file_tree} from "./scripts/file-tree.js"
 
 async function viewer() {
-    const viewer = document.querySelector('#viewer');
+    await file_tree();
     
-    await file_view(function render(content) {
-        viewer.innerHTML = sanitizeHtml(content);
+    const viewer = document.querySelector('#viewer');
+    viewer.addEventListener("input", function render() {
+        viewer.innerHTML = sanitizeHtml(viewer.innerHTML);
         
         viewer.innerHTML = textile(viewer.innerHTML);
         

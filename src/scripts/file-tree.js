@@ -10,10 +10,14 @@ const fs = require('fs').promises;
 const path = require('path');
 import config from './userdata.js';
 
-export async function file_view(render_func) {
+export async function file_tree() {
     const files = await getFiles(config.notesDir)
 
-    const treeContainer = document.getElementById("file-tree");
+    const div = document.getElementById("file-tree");
+
+    const treeContainer = document.createElement("details");
+    treeContainer.open = true;
+    div.append(treeContainer);
 
     const dirName = document.createElement("summary")
     dirName.innerText = config.notesDir.split("/").pop();
@@ -29,7 +33,8 @@ export async function file_view(render_func) {
     document.getElementById('file-tree').addEventListener('click', async (event) => {
         if (event.target.classList.contains('file-btn')) {
             try {
-                render_func(await fs.readFile(event.target.value, "utf8"));
+                viewer.innerHTML = await fs.readFile(event.target.value, "utf8");
+                viewer.dispatchEvent(new InputEvent("input", {}));
             } catch (error) {
                 alert("Error loading file\n" + error);
             }

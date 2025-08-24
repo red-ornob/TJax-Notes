@@ -87,6 +87,7 @@ function openFile() {
         const file = event.target.files[0];
         title.value = file.name.split(".")[0];
         editor.value = await fs.readFile(file.path, "utf8");
+        editor.dispatchEvent(new InputEvent("input", {}));
     };
     
     input.click();
