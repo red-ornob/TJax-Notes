@@ -10,9 +10,9 @@ const os = require('os');
 
 export async function init() {
     const configPaths = {
-        win32: path.join(os.homedir(), 'AppData', 'Roaming', 'markx'),
-        darwin: path.join(os.homedir(), '.config', 'markx'),
-        linux: path.join(os.homedir(), '.config', 'markx')
+        win32: path.join(os.homedir(), 'AppData', 'Local', 'tjax', 'userdata'),
+        darwin: path.join(os.homedir(), 'Library', 'Application Support', 'tjax', 'userdata'),
+        linux: path.join(os.homedir(), '.config', 'tjax', 'userdata')
     };
 
     const configJson = {

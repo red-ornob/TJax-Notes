@@ -1,4 +1,4 @@
-MarkX is a note-taking app integrating Textile and MathJax together.\
+TJax Notes is a note-taking app integrating Textile and MathJax together.\
 Copyright (C) 2025 [red.ornob](https://github.com/red-ornob) [<red.ornob.dev@gmail.com>](mailto:red.ornob.dev@gmail.com)
 
 This program is free software: you can redistribute it and/or modify

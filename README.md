@@ -1,4 +1,4 @@
-# MarkX
+# TJax Notes
 This is a note-taking app integrating Textile and MathJax together, written in JavaScript and using NW.js
 
 HEAVILY WIP right now.

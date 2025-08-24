@@ -1,8 +1,8 @@
 {
-  "name": "markx",
+  "name": "tjax",
   "main": "index.js",
   "window": {
-    "title": "MarkX",
+    "title": "TJax Notes",
     "fullscreen": true
   }
 }
