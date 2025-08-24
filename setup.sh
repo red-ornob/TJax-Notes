@@ -6,7 +6,6 @@ mkdir src/lib
 cp node_modules/textile-js/lib/textile.js src/lib/
 cp node_modules/sanitize-html/index.js src/lib/sanitize-html.js
 
-mkdir src/lib/mathjax
 cp -r node_modules/mathjax-full/js/ src/lib/mathjax/
 
 mkdir src/lib/highlight
