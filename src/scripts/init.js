@@ -26,15 +26,9 @@ export async function init() {
     let filePath = path.join(configDir, 'config.json');
     try{
         await fs.access(filePath, fs.constants.R_OK | fs.constants.W_OK);
-        updateConfig(filePath, configJson)
-            .catch((err) => {
-            alert("Error while updating config file\n" + err);
-        });
+        await updateConfig(filePath, configJson);
     } catch {
-        createConfig(filePath, configJson)
-            .catch((err) => {
-            alert("Error while creating config file\n" + err);
-        });
+        await createConfig(filePath, configJson);
     }
 }
 
