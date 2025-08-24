@@ -10,14 +10,13 @@ const sanitizeHtml = require("./lib/sanitize-html.js");
 const textile = require("./lib/textile.js")
 const mathjax = require("./scripts/mathjax.js");
 const highlight = require("./scripts/highlight.js");
+import {file_view} from "./scripts/file-tree.js"
 
-document.addEventListener("DOMContentLoaded", function () {
-    
-    const text = "WIP: get text from whatever filesystem implementation";
+async function viewer() {
     const viewer = document.querySelector('#viewer');
     
-    document.addEventListener('DOMContentLoaded', function () { // need to change the event to appropriate event
-        viewer.innerHTML = sanitizeHtml(text);
+    await file_view(function render(content) {
+        viewer.innerHTML = sanitizeHtml(content);
         
         viewer.innerHTML = textile(viewer.innerHTML);
         
@@ -26,4 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const code_blocks = viewer.querySelectorAll("code");
         highlight.format_code(code_blocks);
     });
-});
+}
+
+await viewer()

@@ -9,10 +9,13 @@
     <title>TJax Viewer</title>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <link rel="stylesheet" href="styles/codestyles/pop.css">
-    <script src="viewer.js"></script>
+    <script src="viewer.js" type="module"></script>
 </head>
 <body>
     <a href="./index.html">Home</a>&nbsp;&nbsp;&nbsp;<a href="./editor.html">Edit</a><br>
+    <div style="float: left; height: 95vh; width: 10%; overflow-y: auto; white-space: nowrap;">
+        <details open id="file-tree"></details>
+    </div>
     <div id="viewer" style="height: 95vh;"></div>
 </body>
 </html>
