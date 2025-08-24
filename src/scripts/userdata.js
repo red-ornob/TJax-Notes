@@ -26,7 +26,7 @@ async function getConfig() {
         alert("Error getting config\n" + err);
     }
 }
- 
+
 const config = await getConfig();
 
 export default config

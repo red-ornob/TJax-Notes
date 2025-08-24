@@ -6,11 +6,11 @@
 
 'use strict';
 
-const { mathjax } = require('../lib/mathjax/mathjax.js');
-const { TeX } = require('../lib/mathjax/input/tex.js');
-const { SVG } = require('../lib/mathjax/output/svg.js');
-const { liteAdaptor } = require('../lib/mathjax/adaptors/liteAdaptor');
-const { RegisterHTMLHandler } = require('../lib/mathjax/handlers/html');
+const {mathjax} = require('../lib/mathjax/mathjax.js');
+const {TeX} = require('../lib/mathjax/input/tex.js');
+const {SVG} = require('../lib/mathjax/output/svg.js');
+const {liteAdaptor} = require('../lib/mathjax/adaptors/liteAdaptor');
+const {RegisterHTMLHandler} = require('../lib/mathjax/handlers/html');
 
 const adaptor = liteAdaptor();
 RegisterHTMLHandler(adaptor);
