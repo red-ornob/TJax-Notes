@@ -12,7 +12,6 @@ const mathjax = require("./scripts/mathjax.js");
 const highlight = require("./scripts/highlight.js");
 
 document.addEventListener("DOMContentLoaded", function () {
-    
     const editor = document.querySelector('#editor');
     const viewer = document.querySelector('#viewer');
     // buffer used to remove flickering caused by unrendered markdown and mathjax
