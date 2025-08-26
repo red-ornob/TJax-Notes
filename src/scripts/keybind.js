@@ -56,6 +56,13 @@ function set_keybinds() {
         shift: false,
         alt: true,
     }, goEdit);
+
+        bind({
+        code: "Enter",
+        ctrl: false,
+        shift: false,
+        alt: true,
+    }, toggleFullscreen);
 }
 
 function bind({code, ctrl, shift, alt}, func) {
@@ -122,6 +129,10 @@ function goView() {
 
 function goEdit() {
     document.location.href = "editor.html";
+}
+
+function toggleFullscreen() {
+    nw.Window.get().toggleFullscreen()
 }
 
 set_keybinds();
