@@ -1,0 +1,41 @@
+/*
+ * Copyright (C) 2025 red.ornob [https://github.com/red-ornob] <red.ornob.dev@gmail.com>
+ * This program is subject to the AGPL-3.0-or-later licence.
+ * Check NOTICE.md at the project root for the full notice.
+ */
+
+.bg-main {
+    margin: 0;
+    padding: 3vh;
+    height: 94vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-content: stretch;
+    text-align: center;
+    background-color: #151520;
+}
+
+#app-name {
+    display: inline;
+    background-color: black;
+    padding: 2vh;
+    border: 1vh;
+    border-radius: 1vh;
+    color: white;
+    #T {
+        color: purple;
+    }
+    #Jax {
+        color: yellow;
+    }
+}
+
+.btn-main {
+    margin: 2vw;
+    background-color: purple;
+    border: none;
+    border-radius: 1vh;
+    color: white;
+    font-size: 32px;
+}
