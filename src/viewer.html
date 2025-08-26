@@ -8,13 +8,18 @@
 <head>
     <title>TJax Viewer</title>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <link rel="stylesheet" href="styles/codestyles/pop.css">
     <script src="viewer.js" type="module"></script>
+    <link rel="stylesheet" href="styles/viewer.css">
+    <link rel="stylesheet" href="styles/codestyles/pop.css">
 </head>
-<body>
-    <a href="./index.html">Home</a>&nbsp;&nbsp;&nbsp;<a href="./editor.html">Edit</a><br>
-    <div id="file-tree" style="float: left; height: 95vh; width: 10%; overflow-y: auto; white-space: nowrap;">
+<body class="bg-main">
+    <div class="toolbar">
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='editor.html'">Edit</button>
     </div>
-    <div id="viewer" style="height: 95vh;"></div>
+    <div class="main-container">
+        <div id="file-tree"></div>
+        <div id="viewer"></div>
+    </div>
 </body>
 </html>

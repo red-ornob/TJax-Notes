@@ -71,7 +71,7 @@ function populateTree(tree, element) {
             element.append(treeContainer);
             
             const dirName = document.createElement("summary");
-            dirName.innerText = name;
+            dirName.innerText = name + '/';
             treeContainer.append(dirName);
 
             const subTree = document.createElement("ul")
