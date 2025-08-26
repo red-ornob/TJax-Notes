@@ -15,9 +15,14 @@ export async function file_tree() {
 
     const div = document.getElementById("file-tree");
 
+    const root = document.createElement("ul")
+    root.style.all = "unset";
+    root.style.listStyleType = "none";
+    div.append(root)
+    
     const treeContainer = document.createElement("details");
     treeContainer.open = true;
-    div.append(treeContainer);
+    root.append(treeContainer);
 
     const dirName = document.createElement("summary")
     dirName.innerText = config.notesDir.split("/").pop();
@@ -33,7 +38,7 @@ export async function file_tree() {
     document.getElementById('file-tree').addEventListener('click', async (event) => {
         if (event.target.classList.contains('file-btn')) {
             try {
-                viewer.innerHTML = await fs.readFile(event.target.value, "utf8");
+                viewer.innerHTML = await fs.readFile(event.target.dataset.path, "utf8");
                 viewer.dispatchEvent(new InputEvent("input", {}));
             } catch (error) {
                 alert("Error loading file\n" + error);
@@ -82,11 +87,11 @@ function populateTree(tree, element) {
         
         } else if (typeof value === 'string') {
             const file = document.createElement("li");
-            const button = document.createElement("button");
-            button.className = "file-btn";
-            button.textContent = name;
-            button.value = value;
-            file.append(button);
+            file.className = "file-btn";
+            file.value
+            file.textContent = name;
+            file.dataset.path = value;
+            // file.append(button);
             element.append(file);
         }
     }

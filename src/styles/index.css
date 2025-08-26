@@ -37,4 +37,7 @@
     border: none;
     color: white;
     font-size: 32px;
+    &:hover {
+        color: yellow;
+    }
 }

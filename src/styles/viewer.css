@@ -30,25 +30,37 @@
     overflow: auto;
     border: thin solid white;
     float: right;
+    &:hover {
+        border: thin solid yellow;
+    }
 }
 
 #file-tree {
     all: initial;
     color: white;
-    padding-top: 1%;
-    width: 15%;
+    margin-top: 1%;
+    padding: 1%;
+    border: thin solid white;
+    width: 13%;
     height: 100%;
     overflow: auto;
+    &:hover {
+        border: thin solid yellow;
+    }
     summary {
         all: initial;
         color: white;
         display: block;
         /*background-color: white;*/
     }
-    button {
-        all:  initial;
-        display: block;
-        color: white;
+    summary:hover {
+        color: yellow;
+    }
+    li:hover {
+        color: yellow;
+    }
+    ul {
+        list-style-type: none;
     }
 }
 
@@ -63,5 +75,8 @@
         background-color: purple;
         color: white;
         border: none;
+    }
+    button:hover {
+        color: yellow;
     }
 }

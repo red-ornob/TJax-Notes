@@ -30,6 +30,9 @@
         padding: 0.5%;
         width: 100%;
         border: thin solid white;
+        &:focus {
+            border: thin solid yellow;
+        }
     }
 }
 
@@ -44,6 +47,9 @@
     height: 100%;
     border: thin solid white;
     float: left;
+    &:focus {
+        border: thin solid yellow;
+    }
 }
 
 #viewer {
@@ -58,6 +64,9 @@
     overflow: auto;
     border: thin solid white;
     float: right;
+    &:hover {
+        border: thin solid yellow;
+    }
 }
 
 .toolbar {
@@ -71,5 +80,8 @@
         background-color: purple;
         color: white;
         border: none;
+        &:hover {
+            color: yellow;
+        }
     }
 }
