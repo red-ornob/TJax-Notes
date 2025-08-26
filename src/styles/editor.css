@@ -1,0 +1,75 @@
+/*
+ * Copyright (C) 2025 red.ornob [https://github.com/red-ornob] <red.ornob.dev@gmail.com>
+ * This program is subject to the AGPL-3.0-or-later licence.
+ * Check NOTICE.md at the project root for the full notice.
+ */
+
+.bg-main {
+    margin: 0;
+    background-color: #151520;
+}
+
+.main-container {
+    padding: 3vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+}
+
+#title-container {
+    padding: 1vh;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    input {
+        all: unset;
+        background-color: #151520;
+        color: white;
+        padding: 0.5%;
+        width: 100%;
+        border: thin solid white;
+    }
+}
+
+#editor {
+    all: initial;
+    resize: none;
+    margin: 1%;
+    padding: 1%;
+    background-color: #151520;
+    color: white;
+    width: 45%;
+    height: 100%;
+    border: thin solid white;
+    float: left;
+}
+
+#viewer {
+    all: initial;
+    margin: 1% 1% 1% 1%;
+    padding: 0 1% 2% 1%;
+    background-color: #151520;
+    color: white;
+    width: 45%;
+    height: 100%;
+    overflow-wrap: anywhere;
+    overflow: auto;
+    border: thin solid white;
+    float: right;
+}
+
+.toolbar {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    justify-content: left;
+    button {
+        background-color: purple;
+        color: white;
+        border: none;
+    }
+}

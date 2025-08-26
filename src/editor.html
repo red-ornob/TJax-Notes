@@ -8,15 +8,20 @@
 <head>
     <title>TJax Editor</title>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <link rel="stylesheet" href="styles/codestyles/pop.css">
     <script src="editor.js" type="module"></script>
+    <link rel="stylesheet" href="styles/editor.css">
+    <link rel="stylesheet" href="styles/codestyles/pop.css">
 </head>
-<body>
-    <a href="./index.html">Home</a>&nbsp;&nbsp;&nbsp;<a href="./viewer.html">View</a><br>
-    <pre><label for="title"></label><input type="text" name="title" id="title" placeholder="Title" autofocus></pre>
-    <label for="editor"></label>
-    <textarea id="editor" autofocus style="float: left; height: 91vh; width: 49%;"></textarea>
-    <div id="viewer" style="float: right; height: 91vh; width: 49%;"></div>
+<body class="bg-main">
+    <div class="toolbar">
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='viewer.html'">View</button>
+    </div>
+    <div class="main-container">
+        <div id="title-container"><label for="title"></label><input type="text" name="title" id="title" placeholder="Title" autofocus></div>
+        <label for="editor"></label><textarea id="editor" autofocus></textarea>
+        <div id="viewer"></div>
+    </div>
     <div id="buffer" style="display: none;"></div>
 </body>
 </html>
