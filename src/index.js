@@ -6,7 +6,7 @@
 
 "use strict";
 
-const { init } = require('scripts/init');
+const {init} = require('scripts/init');
 
 init()
     .catch((err) => {
@@ -14,5 +14,7 @@ init()
 })
     .then(() => {
     // noinspection JSUnresolvedReference
-    nw.Window.open("index.html");
+    nw.Window.open("index.html", {}, (win) => {
+        win.maximize()
+    });
 });

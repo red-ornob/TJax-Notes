@@ -10,7 +10,7 @@ const fs =  require('fs').promises;
 const path = require('path');
 import config from "./userdata.js";
 
-export function set_keybinds() {
+function set_keybinds() {
     const page = document.URL.split("/").pop().split(".")[0];
         
     if (page === "editor") {
@@ -35,6 +35,27 @@ export function set_keybinds() {
             alt: false,
         }, openFile);
     }
+
+    bind({
+        code: "Digit1",
+        ctrl: false,
+        shift: false,
+        alt: true,
+    }, goHome);
+
+    bind({
+        code: "Digit2",
+        ctrl: false,
+        shift: false,
+        alt: true,
+    }, goView);
+
+    bind({
+        code: "Digit3",
+        ctrl: false,
+        shift: false,
+        alt: true,
+    }, goEdit);
 }
 
 function bind({code, ctrl, shift, alt}, func) {
@@ -55,10 +76,8 @@ function toggleViewer() {
     const editor = document.querySelector('#editor');
     if (viewer.style.display === "none") {
         viewer.style.display = "block";
-        editor.style.width = "49%";
     } else {
         viewer.style.display = "none";
-        editor.style.width = "98.9vw";
     }
 }
 
@@ -92,3 +111,17 @@ function openFile() {
     
     input.click();
 }
+
+function goHome() {
+    document.location.href = "index.html";
+}
+
+function goView() {
+    document.location.href = "viewer.html";
+}
+
+function goEdit() {
+    document.location.href = "editor.html";
+}
+
+set_keybinds();
