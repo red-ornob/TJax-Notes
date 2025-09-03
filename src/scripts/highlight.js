@@ -14,15 +14,13 @@ function format_code(code_blocks) {
         element.classList.add("hljs");
         element.classList.add(lang ? 'language-' + lang : 'language-plaintext');
         
-        console.log(element.parentElement);
-        
         if (element.parentElement.tagName === "pre") {
             element.parentElement.classList.add("hljs");
             element.parentElement.classList.add(lang ? 'language-' + lang : 'language-plaintext');
         }
-    
+        
         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
-        element.innerHTML = hljs.highlight(element.innerHTML, { language }).value;
+        element.innerHTML = hljs.highlight(element.innerText, { language }).value;
     });
 }
 

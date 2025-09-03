@@ -26,7 +26,7 @@ function editor() {
     
     setInterval(function render() { // to limit the number of calls
         if (toRender) {
-            buffer.innerHTML = textile(buffer.innerText);
+            buffer.innerHTML = textile(buffer.innerHTML);
             
             const math_blocks = buffer.querySelectorAll("code");
             mathjax.render_math(math_blocks);
