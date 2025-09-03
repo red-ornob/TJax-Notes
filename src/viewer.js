@@ -6,7 +6,6 @@
 
 'use strict';
 
-const sanitizeHtml = require("./lib/sanitize-html.js");
 const textile = require("./lib/textile.js")
 const mathjax = require("./scripts/mathjax.js");
 const highlight = require("./scripts/highlight.js");
@@ -17,8 +16,6 @@ async function viewer() {
     
     const viewer = document.querySelector('#viewer');
     viewer.addEventListener("input", function render() {
-        viewer.innerHTML = sanitizeHtml(viewer.innerHTML);
-        
         viewer.innerHTML = textile(viewer.innerHTML);
         
         const math_blocks = viewer.querySelectorAll("code");

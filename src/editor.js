@@ -6,7 +6,6 @@
 
 'use strict';
 
-const sanitizeHtml = require("./lib/sanitize-html.js");
 const textile = require("./lib/textile.js")
 const mathjax = require("./scripts/mathjax.js");
 const highlight = require("./scripts/highlight.js");
@@ -21,13 +20,13 @@ function editor() {
     let toRender = false;
     
     editor.addEventListener('input', function () {
-        buffer.innerHTML = sanitizeHtml(editor.value);
+        buffer.innerText = editor.value.toString();
         toRender = true;
     });
     
     setInterval(function render() { // to limit the number of calls
         if (toRender) {
-            buffer.innerHTML = textile(buffer.innerHTML);
+            buffer.innerHTML = textile(buffer.innerText);
             
             const math_blocks = buffer.querySelectorAll("code");
             mathjax.render_math(math_blocks);
