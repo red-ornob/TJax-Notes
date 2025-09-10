@@ -72,6 +72,7 @@ function bind({code, ctrl, shift, alt}, func) {
                 (!shift || e.shiftKey) &&
                 (!alt || e.altKey) &&
                 e.code === code) {
+                e.preventDefault();
                 func()
             }
         },
