@@ -26,6 +26,8 @@ function editor() {
     
     setInterval(function render() { // to limit the number of calls
         if (toRender) {
+            toRender = false;
+            
             buffer.innerHTML = textile(buffer.innerHTML);
             
             const math_blocks = buffer.querySelectorAll("code");
@@ -34,7 +36,6 @@ function editor() {
             highlight.format_code(code_blocks);
             
             viewer.innerHTML = buffer.innerHTML;
-            toRender = false;
         }
     }, 1);
 }
