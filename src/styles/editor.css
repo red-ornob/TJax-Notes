@@ -30,8 +30,11 @@
         padding: 0.5%;
         width: 100%;
         border: thin solid white;
+        &:hover {
+           border: thin solid yellow;
+        }
         &:focus {
-            border: thin solid yellow;
+            border: thin solid purple;
         }
     }
 }
@@ -47,8 +50,11 @@
     height: 100%;
     border: thin solid white;
     float: left;
-    &:focus {
+    &:hover {
         border: thin solid yellow;
+    }
+    &:focus {
+        border: thin solid purple;
     }
 }
 
@@ -84,4 +90,8 @@
             color: yellow;
         }
     }
+}
+
+text {
+    color: black;
 }
